@@ -114,4 +114,9 @@
    #:terminal-take-replies
 
    ;; snapshot
-   #:terminal-snapshot))
+   #:terminal-snapshot
+   ;; search / selection
+   #:terminal-search
+   #:terminal-match #:make-terminal-match #:terminal-match-p
+   #:terminal-match-x #:terminal-match-y #:terminal-match-end
+   #:terminal-selection-text))

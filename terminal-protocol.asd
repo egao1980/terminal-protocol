@@ -1,5 +1,5 @@
 (defsystem "terminal-protocol"
-  :version "0.1.0"
+  :version "0.2.0"
   :description "CLOS headless terminal-emulator protocol for cl-stack (feed octets, frames, input encoding, host effects)"
   :author "egao1980"
   :license "MIT"
@@ -13,7 +13,8 @@
                (:file "modes")
                (:file "host")
                (:file "protocol")
-               (:file "snapshot"))
+               (:file "snapshot")
+               (:file "text-ops"))
   :in-order-to ((test-op (test-op "terminal-protocol/tests"))))
 
 (defsystem "terminal-protocol/tests"
@@ -24,7 +25,8 @@
                (:file "mock-backend")
                (:file "types-test")
                (:file "protocol-test")
-               (:file "host-test"))
+               (:file "host-test")
+               (:file "text-ops-test"))
   :perform (test-op (o c)
              (unless (symbol-call :rove :run c)
                (error "tests failed for ~A" (component-name c)))))
