@@ -32,6 +32,8 @@ There's no PTY, no rendering and no fonts. Brief: [`cl-stack/docs/capabilities/t
 - **Keys** are W3C `KeyboardEvent.code` names, kebab-cased (`:a`, `:arrow-up`, `:numpad-enter`). **Modes** are keywords (`:bracketed-paste`), `(:dec n)` or `(:ansi n)`.
 - Bad arguments signal `terminal-invalid-argument` with a `use-value` restart. Missing features signal `terminal-unsupported`.
 
+`terminal-search` (→ `terminal-match` x/y/end, in cell columns) and `terminal-selection-text` (linear or `:rectangular`, like a mouse copy) work over the viewport. The protocol defines them once on top of frames, so every backend has them.
+
 `terminal-snapshot` builds a backend-neutral plist (lines, cells, cursor, title, screen) from protocol calls only. Parity suites compare snapshots with `equalp`.
 
 ## License
