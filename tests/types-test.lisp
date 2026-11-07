@@ -38,3 +38,10 @@
   (ng (tp:paste-safe-p (format nil "rm -rf /~%")))
   (ng (tp:paste-safe-p (format nil "a~Cb" #\Return)))
   (ng (tp:paste-safe-p (format nil "x~C[201~~y" #\Esc))))
+
+(deftest display-width
+  (ok (= 1 (tp:char-width #\a)))
+  (ok (= 2 (tp:char-width (code-char #x65E5))))      ; 日
+  (ok (= 0 (tp:char-width (code-char #x301))))       ; combining acute
+  (ok (= 2 (tp:char-width (code-char #x1F600))))     ; emoji
+  (ok (= 5 (tp:string-width (coerce (list #\a (code-char #x65E5) (code-char #x672C)) 'string)))))

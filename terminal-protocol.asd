@@ -9,12 +9,14 @@
   :components ((:file "package")
                (:file "conditions")
                (:file "types")
+               (:file "width")
                (:file "keys")
                (:file "modes")
                (:file "host")
                (:file "protocol")
                (:file "snapshot")
-               (:file "text-ops"))
+               (:file "text-ops")
+               (:file "images"))
   :in-order-to ((test-op (test-op "terminal-protocol/tests"))))
 
 (defsystem "terminal-protocol/tests"

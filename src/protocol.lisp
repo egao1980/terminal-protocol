@@ -11,7 +11,8 @@ and set *TERMINAL-BACKEND* when they load."))
 
 (defgeneric backend-supports-p (backend feature)
   (:documentation "True if BACKEND implements FEATURE: :SCROLLBACK
-:ALTERNATE-SCREEN :KITTY-KEYBOARD :OSC-52 :OSC-133 :FORMAT-VT :FORMAT-HTML.")
+:ALTERNATE-SCREEN :KITTY-KEYBOARD :KITTY-GRAPHICS :OSC-52 :OSC-133 :FORMAT-VT
+:FORMAT-HTML.")
   (:method ((backend terminal-backend) feature)
     (declare (ignore feature))
     nil))

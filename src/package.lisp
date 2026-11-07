@@ -37,6 +37,9 @@
    #:terminal-colors-foreground #:terminal-colors-background
    #:terminal-colors-cursor #:terminal-colors-palette
 
+   ;; display width
+   #:char-width #:string-width
+
    ;; keys / mouse / modes
    #:+key-names+ #:key-name-p
    #:+modifiers+ #:+key-actions+
@@ -119,4 +122,17 @@
    #:terminal-search
    #:terminal-match #:make-terminal-match #:terminal-match-p
    #:terminal-match-x #:terminal-match-y #:terminal-match-end
-   #:terminal-selection-text))
+   #:terminal-selection-text
+   ;; images (Kitty graphics)
+   #:image-placement #:make-image-placement #:image-placement-p
+   #:image-placement-image-id #:image-placement-placement-id
+   #:image-placement-x #:image-placement-y #:image-placement-cols #:image-placement-rows
+   #:image-placement-z #:image-placement-layer
+   #:image-placement-cell-offset-x #:image-placement-cell-offset-y
+   #:image-placement-pixel-width #:image-placement-pixel-height
+   #:image-placement-source-x #:image-placement-source-y
+   #:image-placement-source-width #:image-placement-source-height
+   #:terminal-image #:make-terminal-image #:terminal-image-p
+   #:terminal-image-id #:terminal-image-width #:terminal-image-height
+   #:terminal-image-format #:terminal-image-pixels
+   #:frame-images))

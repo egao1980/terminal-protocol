@@ -76,3 +76,9 @@
   (let ((term (grid 8 "W日x    " "")))
     (ok (equal (tp:terminal-selection-text term 0 0 7 0) "日x"))
     (ok (equal (tp:terminal-selection-text term 0 0 7 1) (format nil "日x~%")))))
+
+(deftest images-default-to-none
+  (with-mock (term)
+    (tp:with-frame (frame term)
+      (ok (null (tp:frame-images frame))))
+    (ok (signals (tp:terminal-image term 1) 'tp:terminal-unsupported))))
